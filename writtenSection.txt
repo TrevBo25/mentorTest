@@ -1,28 +1,40 @@
 Answer each question in a written format
 
 1. What does semantic HTML mean?
+    Semantic HTML is a way to communicate with your HTML code. It provides additional information about your page by using tags that actually have meaning to what the element is, (<p> means paragraph, <h2> is a second level headline, <code> is a code reference), rather than tags, like <b>, that only define how the text should look.
 
 2. What is the box model?
+    All HTML elements are considered in boxes. The box model refers to the surounding style elements around it. From outside to in, the box model consists of margin -> border -> padding -> content.
 
 3. What is the difference between IDs and Classes?
+    IDs are considered unique where as classes are not. You can have multiple classes on an element but only one ID. You can have multiple elements with the same class but you are only allowed to have one element with a given ID per file. In terms of hierarchy, IDs styles overtake class styles.
 
 4. What does the z-index do?
+    The z-index indentifies how far 'forward' or 'back' a given element is. You could think of it as a stack with the higher z-index on top and the lower on the bottom.
 
 5. Summarize what the keyword 'this' is used for?
+    In most cases, 'this' is used to refer to the properties of a given object. In certain cases, 'this' can be used in bind statments when you want a certain function's 'this' to be referenced as 'this' in another place/function. 
 
 6. What is a callback?
+    A callback function is a function that is passed as a parameter to another function, then called inside that function.
 
 7. What is a closure?
+    A closure is created whenever a function is declared. It wraps itself around the variables in scope at the time of declaration. It encloses those variables to create a 'stateful function'.
 
 8. How does prototype work?
+    .Prototype is a way to add a property to the original instance of an object i.e. you can add a function usable on all strings by creating a method on the String object with String.prototype.wHaTeVeRyOuWaNtToCaLlIt.
 
 9. What is MVC?
+    The model-view-controller design pattern. It is essentially a seperation of concerns into three parts: model (is all about the data), view (is all about the DOM baby), and controller (is all about handling events and being the middle man between the M and the V).
 
 10. What is the component lifecycle?
+    A react component's lifecycle is predictable sequence of stages that a component will go though that give us more control over the 'rendering'. The lifecycle has many methods that can be broken up into four parts: initial, mounting, updating, unmounting. The most common lifecycle method I have came across so far is the componentDidMount which can be found in the mounting phase.
 
 11. What is REST?
+    REST(ful) is a type of api in which a client makes a call to a server and then gets data back.
 
 12. Name three ways of getting data from the URL using express
+    Parameters, queries, request body
 
 create table users (
 id serial,
@@ -33,9 +45,17 @@ email varchar(255)
 12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
 -Get all users:
+    SELECT * FROM users;
 
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+    INSERT INTO users (name, email)
+    VALUES ('your name', 'fake@fake.com');
 
 -Update the newly created user's name to 'Bobby Boy':
+    UPDATE users
+    SET name = 'Bobby Boy'
+    WHERE email = 'fake@fake.com';
 
 -Delete the newly updated user:
+    DELETE FROM users
+    WHERE name = 'Bobby Boy';
